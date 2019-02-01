@@ -2,8 +2,11 @@
   "name": "kotlinify-js",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
+    "start": "npm run clean && npm run build",
+    "clean": "rimraf dist",
+    "build": "rollup index.js --file dist/bundle.js --format umd --name kotlinifyJS",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +20,8 @@
   },
   "homepage": "https://github.com/flock-community/kotlinify-js#readme",
   "devDependencies": {
-    "prettier": "^1.16.3"
+    "prettier": "^1.16.3",
+    "rollup": "^1.1.2"
   },
   "prettier": {
     "singleQuote": true,
