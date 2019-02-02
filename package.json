@@ -7,21 +7,25 @@
     "start": "npm run clean && npm run build",
     "clean": "rimraf dist",
     "build": "rollup index.js --file dist/bundle.js --format umd --name kotlinifyJS",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flock-community/kotlinify-js.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/flock-community/kotlinify-js/issues"
   },
   "homepage": "https://github.com/flock-community/kotlinify-js#readme",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.0.0",
+    "jest": "^24.0.0",
     "prettier": "^1.16.3",
-    "rollup": "^1.1.2"
+    "rollup": "^1.1.2",
+    "@types/jest": "^23.3.13"
   },
   "prettier": {
     "singleQuote": true,
