@@ -1,43 +1,46 @@
 # kotlinify-js
 
-We all love the functional expects of javascript. But in some scenarios we wish to bing it to the next level. kolinify-js added the functional concepts of kotlin to javascript
+We all love the functional aspects of JavaScript. However, in some scenarios we wish to take it to the next level. Kotlinify-js
+adds some functional concepts of Kotlin to JavaScript.
+
+Looking at the pipe and chain styles, we find that in this way flow is ordered chronologically.
 
 ## Install
 
-````
-npm i kolinify-js -S
-````
+```
+npm i kotlinify -S
+```
 
 ## Usage
 
-There are two ways to use kotlinify-js. 
-- You can use it as an additional library. You explicitly wrap the objects you want to kotlinify.
-- Another option is to overwrite the prototype of Object. Now all goods of kotlinify is by default available for every object.  Make sure you do this at the very beginning of your program
-
-````
-import { chain } from './kotlinify';
-Object.prototype.let = function (it) { return chain(it) }
-````
+```
+import { pipe, chain } from './kotlinify';
+```
 
 ## Examples
 
-A value can be chained
-
-````
-chain('Hello')
+Functions can be chained on a value:
+```
+chain('hello')
     .let(capitalize)
     .let(exclaim, { times: 2 })
-    .also(log)
-    .get(cheer, { times: 2 }),
-````
+    .also(console.log)
+    .get(cheer, { times: 2 });
 
-A value can be piped
+// instead of doing:
+cheer(exclaim(capitalize('hello'), { times: 2 }), { times: 2} );
 
-````
-pipe(
-    'Hello',
+// or:
+const value = exclaim(capitalize('hello'), { times: 2 });
+console.log(value);
+cheer(value, { times: 2 });
+```
+
+You can set up a pipe where the first argument is a value and then functions are applied.
+```
+pipe('hello',
     capitalize,
     it => exclaim(it, { times: 2 }),
     it => cheer(it, { times: 2 }),
-)
-````
+);
+```
