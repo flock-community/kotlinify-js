@@ -7,7 +7,7 @@ const exclaim = (string, { times }) => string + '!'.repeat(times);
 
 test('a value can be chained', () => {
   expect(
-    chain('Hello')
+    chain('hello')
       .let(capitalize)
       .let(exclaim, { times: 2 })
       .also(log)
@@ -18,7 +18,7 @@ test('a value can be chained', () => {
 test('a value can be piped', () => {
   expect(
     pipe(
-      'Hello',
+      'hello',
       capitalize,
       it => exclaim(it, { times: 2 }),
       it => cheer(it, { times: 2 }),
