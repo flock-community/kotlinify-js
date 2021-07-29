@@ -20,12 +20,14 @@
   "homepage": "https://github.com/flock-community/kotlinify-js#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
+    "@types/jest": "^23.3.13",
     "babel-jest": "^24.0.0",
     "jest": "^24.0.0",
     "prettier": "^1.16.3",
-    "rollup": "^1.1.2",
-    "@types/jest": "^23.3.13"
+    "rollup": "^1.1.2"
   },
   "prettier": {
     "singleQuote": true,
